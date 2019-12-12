@@ -11,6 +11,7 @@ import {
     // STATE
     smurfs: [],
     isFetching: false,
+    isAdding: false,
     error: ''
   };
   
@@ -38,7 +39,8 @@ import {
       case ADD_SMURF:
         return {
           ...state,
-          isAdding: true
+          isAdding: true,
+          error: ''
         }
       case POST_SMURF:
         return {
@@ -49,6 +51,7 @@ import {
       case POST_FAIL:
         return {
           ...state,
+          isFetching: false,
           isAdding: false,
           error: action.payload
         }
