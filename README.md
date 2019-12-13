@@ -23,10 +23,18 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+      + More efficient way to use or "teleport" props than prop drilling.
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+      + Actions: handles logic and tells reducer how to change state
+      + Reducers: a function that returns state data
+      + Store: Holds the data. What components refer to for state { object } information.
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+      + Component state is local (better for transient state, or for children of component)
+      + Application state is global (better for state used between components or when used frequently)
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+      + Middleware that lets you call action creators that return a function instead of an action object.
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+      + Hooks/custom-hooks, because they are easier to pass data around/re-use structures to pass data around. 
 
 ## Project Set Up
 
@@ -34,10 +42,14 @@ Follow these steps to set up your project:
 
 - [ ] `fork & clone` this repository.
 - [ ] `cd` into the forked copy of this repository.
-- [ ] **RUN** `yarn` to retrieve all `server-side` the dependencies.
-- [ ] **RUN** `yarn start` or `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-- [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
-- [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [x] **RUN** `yarn` to retrieve all `server-side` the dependencies.
+- [x] **RUN** `yarn start` or `npm start` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+          - redux - yarn add react-redux
+          - react logger - yarn add redux-logger
+          - react thunk - yarn add redux-thunk
+          - axios - yarn add axios
+- [x] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
+- [x] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`
 - [ ] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
 - [ ] **cd** into `smurfs` and run `yarn` to retrieve the client side dependencies.
 - [ ] **RUN** `yarn start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
